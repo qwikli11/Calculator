@@ -4,7 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:padding="10dp">
+
+
+    <TextView
+        android:id="@+id/text_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="3dp"
+        android:textSize="@dimen/buttonSize"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/key_2"
+        />
 
     <Button
         android:id="@+id/key_1"
@@ -12,7 +26,8 @@
         android:layout_height="wrap_content"
         android:text="@string/key_1"
         android:textSize="@dimen/buttonSize"
-        app:layout_constraintHorizontal_chainStyle="packed"
+
+        app:layout_constraintHorizontal_chainStyle="spread"
         app:layout_constraintVertical_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -49,7 +64,7 @@
         android:layout_height="wrap_content"
         android:text="@string/key_4"
         android:textSize="@dimen/buttonSize"
-        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintHorizontal_chainStyle="spread"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/key_1"
         app:layout_constraintEnd_toStartOf="@id/key_5"
@@ -83,11 +98,11 @@
         android:layout_height="wrap_content"
         android:text="@string/key_7"
         android:textSize="@dimen/buttonSize"
-        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintHorizontal_chainStyle="spread"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/key_4"
         app:layout_constraintEnd_toStartOf="@id/key_8"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintBottom_toTopOf="@id/key_0"/>
 
     <Button
         android:id="@+id/key_8"
@@ -98,7 +113,7 @@
         app:layout_constraintStart_toEndOf="@id/key_7"
         app:layout_constraintTop_toBottomOf="@id/key_5"
         app:layout_constraintEnd_toStartOf="@id/key_9"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintBottom_toTopOf="@id/key_point"/>
 
     <Button
         android:id="@+id/key_9"
@@ -109,28 +124,31 @@
         app:layout_constraintStart_toEndOf="@id/key_8"
         app:layout_constraintTop_toBottomOf="@id/key_6"
         app:layout_constraintEnd_toStartOf="@id/key_multiply"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintBottom_toTopOf="@id/equals"/>
 
     <Button
         android:id="@+id/key_0"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/key_0"
         android:textSize="@dimen/buttonSize"
-        app:layout_constraintStart_toStartOf="@id/key_7"
-        app:layout_constraintTop_toBottomOf="@id/key_8"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/key_7"
         app:layout_constraintEnd_toStartOf="@id/key_point"
+        app:layout_constraintBottom_toBottomOf="parent"
         />
 
     <Button
         android:id="@+id/key_point"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/key_point"
         android:textSize="@dimen/buttonSize"
         app:layout_constraintStart_toEndOf="@id/key_0"
-        app:layout_constraintTop_toBottomOf="@id/key_9"
-        app:layout_constraintEnd_toStartOf="@id/key_divide"
+        app:layout_constraintTop_toBottomOf="@id/key_8"
+        app:layout_constraintEnd_toStartOf="@id/equals"
+        app:layout_constraintBottom_toBottomOf="parent"
         />
 
     <Button
@@ -165,16 +183,30 @@
         app:layout_constraintStart_toEndOf="@id/key_9"
         app:layout_constraintTop_toBottomOf="@id/key_minus"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintBottom_toTopOf="@id/key_divide"/>
+
     <Button
         android:id="@+id/key_divide"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/key_divide"
         android:textSize="@dimen/buttonSize"
-        app:layout_constraintStart_toEndOf="@id/key_point"
+        app:layout_constraintStart_toEndOf="@id/equals"
         app:layout_constraintTop_toBottomOf="@id/key_multiply"
-        app:layout_constraintEnd_toEndOf="@id/key_multiply"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
        />
+
+    <Button
+        android:id="@+id/equals"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/equals"
+        android:textSize="@dimen/buttonSize"
+        app:layout_constraintStart_toEndOf="@id/key_point"
+        app:layout_constraintTop_toBottomOf="@id/key_9"
+        app:layout_constraintEnd_toStartOf="@id/key_divide"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
